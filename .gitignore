@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+# --- BỔ SUNG QUAN TRỌNG (Để sửa lỗi 10k file) ---
+
+# Bỏ qua thư mục lịch sử nội bộ của VS Code (Thủ phạm chính)
+.history/
+
+# Bỏ qua cài đặt riêng của VS Code trên máy bạn
+.vscode/
+
+# Nếu bạn không muốn up các ảnh/video test lên Git
+# (Thấy trong hình có file .jpeg)
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.pth

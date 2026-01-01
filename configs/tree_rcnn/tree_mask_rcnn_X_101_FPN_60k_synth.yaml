@@ -1,0 +1,21 @@
+_BASE_: "base_mask_rcnn_X_101_32x8d_FPN_3x.yaml"
+
+MODEL:
+  WEIGHTS: ""
+  MASK_ON: True
+  ROI_HEADS:
+    NUM_CLASSES: 1
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 1
+  ROI_KEYPOINT_HEAD:
+    NUM_KEYPOINTS: 5
+
+DATASETS:
+  TRAIN: ()
+  TEST: ()
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  MAX_ITER: 60000
+
+OUTPUT_DIR: "./output"
