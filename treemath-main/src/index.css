@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tree Measurement App - Dark Nature Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Dark forest theme - default to dark mode */
+    --background: 160 30% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 160 30% 8%;
+
+    --secondary: 160 20% 18%;
+    --secondary-foreground: 120 20% 95%;
+
+    --muted: 160 15% 20%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 85 60% 50%;
+    --accent-foreground: 160 30% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 120 20% 95%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 15%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom nature colors */
+    --tree-green: 142 70% 45%;
+    --tree-green-light: 142 60% 55%;
+    --tree-green-dark: 142 80% 25%;
+    --leaf-green: 100 50% 45%;
+    --forest-bg: 160 30% 8%;
+    --forest-card: 160 25% 12%;
+    --gold: 45 90% 55%;
+    --bronze: 30 60% 45%;
+    --silver: 0 0% 75%;
+
+    /* Glass effect */
+    --glass-bg: 160 25% 15% / 0.6;
+    --glass-border: 120 20% 95% / 0.1;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 160 30% 8%;
+
+    --secondary: 160 20% 18%;
+    --secondary-foreground: 120 20% 95%;
+
+    --muted: 160 15% 20%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 85 60% 50%;
+    --accent-foreground: 160 30% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 120 20% 95%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 15%;
+    --ring: 142 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer components {
+  /* Enhanced Glassmorphism card */
+  .glass-card {
+    @apply backdrop-blur-xl rounded-3xl;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.7) 0%,
+      hsl(var(--card) / 0.4) 100%
+    );
+    border: 1px solid hsl(120 20% 95% / 0.08);
+    box-shadow: 
+      0 8px 32px hsl(160 30% 5% / 0.4),
+      0 2px 8px hsl(160 30% 5% / 0.2),
+      inset 0 1px 0 hsl(120 20% 95% / 0.05);
+  }
+
+  /* Premium glass effect for hero elements */
+  .glass-premium {
+    @apply backdrop-blur-2xl rounded-3xl;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card) / 0.8) 0%,
+      hsl(160 25% 10% / 0.6) 50%,
+      hsl(var(--card) / 0.7) 100%
+    );
+    border: 1px solid hsl(120 20% 95% / 0.12);
+    box-shadow: 
+      0 12px 40px hsl(160 30% 3% / 0.5),
+      0 4px 12px hsl(160 30% 5% / 0.3),
+      inset 0 1px 0 hsl(120 20% 95% / 0.08),
+      inset 0 -1px 0 hsl(160 30% 5% / 0.2);
+  }
+
+  /* Gold glow for rank 1 */
+  .rank-gold {
+    background: linear-gradient(
+      135deg,
+      hsl(45 90% 55% / 0.25) 0%,
+      hsl(45 90% 45% / 0.15) 50%,
+      hsl(45 90% 55% / 0.2) 100%
+    );
+    border: 1.5px solid hsl(45 90% 55% / 0.5);
+    box-shadow: 
+      0 0 20px hsl(45 90% 55% / 0.3),
+      0 4px 16px hsl(45 90% 45% / 0.2),
+      inset 0 1px 0 hsl(45 90% 70% / 0.3);
+  }
+
+  .rank-silver {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 75% / 0.2) 0%,
+      hsl(0 0% 65% / 0.1) 100%
+    );
+    border: 1px solid hsl(0 0% 75% / 0.4);
+    box-shadow: 0 2px 12px hsl(0 0% 50% / 0.15);
+  }
+
+  .rank-bronze {
+    background: linear-gradient(
+      135deg,
+      hsl(30 60% 45% / 0.2) 0%,
+      hsl(30 60% 35% / 0.1) 100%
+    );
+    border: 1px solid hsl(30 60% 45% / 0.4);
+    box-shadow: 0 2px 12px hsl(30 60% 30% / 0.15);
+  }
+
+  /* CTA Button with pulse */
+  .btn-cta {
+    @apply relative overflow-hidden rounded-3xl font-bold;
+    background: linear-gradient(
+      135deg,
+      hsl(142 70% 50%) 0%,
+      hsl(142 80% 35%) 50%,
+      hsl(160 60% 30%) 100%
+    );
+    box-shadow: 
+      0 8px 24px hsl(142 70% 30% / 0.4),
+      0 2px 8px hsl(142 70% 25% / 0.3),
+      inset 0 1px 0 hsl(142 60% 60% / 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 12px 32px hsl(142 70% 30% / 0.5),
+      0 4px 12px hsl(142 70% 25% / 0.4),
+      inset 0 1px 0 hsl(142 60% 65% / 0.4);
+  }
+
+  .btn-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(120 20% 95% / 0.1) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2.5s infinite;
+  }
+
+  /* Avatar ring */
+  .avatar-ring {
+    @apply rounded-full flex items-center justify-center font-bold text-sm;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.3) 0%,
+      hsl(160 60% 25% / 0.4) 100%
+    );
+    border: 2px solid hsl(var(--primary) / 0.5);
+    box-shadow: 0 2px 8px hsl(var(--primary) / 0.2);
+  }
+
+  /* Falling leaves animation */
+  .falling-leaf {
+    position: absolute;
+    animation: fall linear infinite;
+  }
+
+  /* Tree marker on map */
+  .tree-marker {
+    @apply w-10 h-10 rounded-full bg-primary/20 border-2 border-primary 
+           flex items-center justify-center cursor-pointer
+           transition-all duration-300 hover:scale-110 hover:bg-primary/40
+           hover:shadow-lg hover:shadow-primary/30;
+  }
+
+  .tree-marker.selected {
+    @apply bg-primary border-primary-foreground scale-110 shadow-lg shadow-primary/50;
+  }
+
+  /* Progress fill animation */
+  .tree-fill {
+    animation: fillTree 3s ease-out forwards;
+  }
+
+  /* CO2 highlight stat */
+  .stat-highlight {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-2xl;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.2) 0%,
+      hsl(85 60% 50% / 0.15) 100%
+    );
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 16px hsl(var(--primary) / 0.15);
+  }
+}
+
+@layer utilities {
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4),
+                0 0 40px hsl(var(--primary) / 0.2),
+                0 0 60px hsl(var(--primary) / 0.1);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(45 90% 55% / 0.4),
+                0 0 40px hsl(45 90% 55% / 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5),
+                 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px hsl(45 90% 55% / 0.6),
+                 0 0 20px hsl(45 90% 55% / 0.3);
+  }
+}
+
+/* Keyframes */
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(360deg) translateX(50px);
+  }
+}
+
+@keyframes falling-leaf {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes fillTree {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes hand-point {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 8px 24px hsl(142 70% 30% / 0.4),
+      0 2px 8px hsl(142 70% 25% / 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 
+      0 12px 32px hsl(142 70% 30% / 0.5),
+      0 4px 12px hsl(142 70% 25% / 0.4),
+      0 0 24px hsl(142 70% 45% / 0.3);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
